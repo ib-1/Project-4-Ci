@@ -21,8 +21,9 @@ class room(models.Model):
 class book(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     room = models.ForeignKey(room, on_delete=models.CASCADE)
-    check_in = models.DateTimeField()
-    check_out = models.DateTimeField()
+    checking_in = models.DateTimeField()
+    checking_out = models.DateTimeField()
 
     def __str__(self):
-        return f'{self.user} has booked {self.room} at {self.check_in} to {self.check_out}'
+        return f'{self.user} has booked {self.room} at {self.checking_in} to {self.checking_out}'
+
