@@ -11,12 +11,12 @@ class room(models.Model):
     
     )
     roomnumber = models.IntegerField()
-    catergory = models.CharField(max_length=3, choices=room_type)
+    category = models.CharField(max_length=3, choices=room_type)
     beds = models.IntegerField()
     capacity = models.IntegerField() # how many people can be help within the room
 
     def __str__(self):
-        return f'{self.roomnumber}. {self.catergory} with {self.beds} beds for {self.capacity} people'
+        return f'{self.roomnumber}. {self.category} with {self.beds} beds for {self.capacity} people'
         #returns a string with all the room info
         
 class book(models.Model):
