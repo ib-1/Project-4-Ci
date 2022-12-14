@@ -5,20 +5,22 @@ from django.conf import settings
 
 class room(models.Model):
     room_type = (
-        ('SBD', 'SINGLE_BED'),
+        ('SBD', 'SINGLE_BED'), # what kind of room it is
         ('DBD', 'DOUBLE_BED'),
         ('VIP', 'DELUXE_ROOM'),
     
     )
-    number = models.IntegerField()
+    roomnumber = models.IntegerField()
     catergory = models.CharField(max_length=3, choices=room_type)
     beds = models.IntegerField()
-    capacity = models.IntegerField()
+    capacity = models.IntegerField() # how many people can be help within the room
 
     def __str__(self):
-        return f'{self.number}. {self.catergory} with {self.beds} beds for {self.capacity} people'
-
+        return f'{self.roomnumber}. {self.catergory} with {self.beds} beds for {self.capacity} people'
+        #returns a string with all the room info
+        
 class book(models.Model):
+    # code for the variable for user and room taken from stack overflow
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     room = models.ForeignKey(room, on_delete=models.CASCADE)
     checking_in = models.DateTimeField()
