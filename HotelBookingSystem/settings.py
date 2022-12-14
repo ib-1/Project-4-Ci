@@ -46,6 +46,8 @@ INSTALLED_APPS = [
     'cloudinary_storage',
     'django.contrib.staticfiles',
     'cloudinary',
+
+    # apps
     'Booking',
     'Booking.book_functions'
 ]

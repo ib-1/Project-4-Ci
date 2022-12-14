@@ -28,4 +28,3 @@ class book(models.Model):
 
     def __str__(self):
         return f'{self.user} has booked {self.room} at {self.checking_in} to {self.checking_out}'
-

@@ -7,5 +7,5 @@ urlpatterns = [
     path('rooms/', rooms.as_view(), name='rooms'),
     path('books/', books.as_view(), name='books'),
     path('book/', bookingView.as_view(), name='booking_view'),
-    path('room/<catergory>', roomdetailview.as_view(), name='roomdetailview'),
+    path('room/<category>', roomdetailview.as_view(), name='roomdetailview'),
 ]
