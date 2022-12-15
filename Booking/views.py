@@ -78,7 +78,7 @@ class roomdetailview(View):
             return render(request, 'confirmation.html')
             
         else:
-            return HttpResponse('this is booked already!, Please book into another time slot.')
+            return render(request, 'alreadybooked.html')
 
 
 class bookingView(FormView):
