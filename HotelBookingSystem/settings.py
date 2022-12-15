@@ -61,6 +61,14 @@ INSTALLED_APPS = [
 LOGIN_REDIRECT_URL = '/rooms'
 LOGOUT_REDIRECT_URL = '/'
 
+CLOUDINARY = {
+      'CLOUD_NAME': 'CLOUD-NAME',  
+      'API_KEY': '911599486431156',  
+      'API_SECRET': 'LJvHir07IW8D0heufeN_7JJzS7s',
+      'API_PROXY': 'http://proxy.server:3128'
+}
+
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
