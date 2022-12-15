@@ -1,5 +1,5 @@
 # **Ibrahims Hotel** 
 
-I built this website to the people who would like to clean their house or for airbnb house's hosts who are looking for a new cleaning company. The deepest cleaning website has it is own booking system what the user can use after registration and they can leave a review as well with pictures if they would like to. They can edit the bookings until it is pending (change time slots or date), but if it is already been approved the user can just cancel it. The review can be updated too. The website has all the information about the company and about the two types of cleaning which is general and deep cleaning, on the contact us page they can see on the map where the company is located. 
+I built this website for thosewho would like to book a hotel room at Hotel Ibrahim. The website has a booking system where users can register and book a certain room they would like and enter the start date to end date. The booking can be cancelled by the user or the admin. This website is mainly logic based and doesnt have much information as the information that would have been displayed if filled with lorum ipsem placement text.
 
-I built this website for thosewho would like to book a hotel room at Hotel Ibrahim. The website has a booking system where users can register and book a room
+[You can try it here on the live website!](https://project-4-ci.herokuapp.com/)
