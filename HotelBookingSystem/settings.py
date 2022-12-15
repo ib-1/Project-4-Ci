@@ -67,6 +67,7 @@ CLOUDINARY_STORAGE = {
     'CLOUD_NAME': 'dzcsl3wxe',  
     'API_KEY': '911599486431156',  
     'API_SECRET': 'LJvHir07IW8D0heufeN_7JJzS7s',
+    'API_PROXY': 'http://proxy.server:3128',
 }
 
 STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'

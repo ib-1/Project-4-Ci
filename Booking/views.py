@@ -75,7 +75,8 @@ class roomdetailview(View):
                 checking_out = data['checking_out'],
             )
             availbook.save()
-            return HttpResponse(availbook)
+            return render(request, 'confirmation.html')
+            
         else:
             return HttpResponse('this is booked already!, Please book into another time slot.')
 
