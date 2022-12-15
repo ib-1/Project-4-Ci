@@ -1,12 +1,27 @@
 from django.shortcuts import render, HttpResponse
 from django.views.generic import ListView, FormView, View
+from django.urls import reverse
 from .models import room, book
 from .forms import availibleFrom
 from Booking.book_functions.availibility import check_availibility
 # Create your views here.
 
-class rooms(ListView):
-    model = room
+def rooms(request):
+    rooms = room.objects.all()[0]
+    room_categories = dict(room.room_type)
+    room_values = room_categories.values()
+    room_list=[]
+
+    for room_type in room_categories:
+        rooms = room_categories.get(room_type)
+        room_url = reverse('Booking:roomdetailview', kwargs={'category': room_type})
+        room_list.append((rooms, room_url))
+    context = {
+        "room_list": room_list,
+        
+    }
+    print(room_list)
+    return render(request, 'roominfoview.html', context)
 
 class books(ListView):
     model = book

@@ -5,9 +5,9 @@ from django.conf import settings
 
 class room(models.Model):
     room_type = (
-        ('SBD', 'SINGLE_BED'), # what kind of room it is
-        ('DBD', 'DOUBLE_BED'),
-        ('VIP', 'DELUXE_ROOM'),
+        ('SBD', 'SINGLE BED'), # what kind of room it is
+        ('DBD', 'DOUBLE BED'),
+        ('VIP', 'DELUXE ROOM'),
     
     )
     roomnumber = models.IntegerField()
