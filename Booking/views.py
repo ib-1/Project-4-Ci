@@ -108,3 +108,6 @@ class bookingView(FormView):
 class CancelBookingView(DeleteView):
     model = book
     success_url = reverse_lazy('Booking:books')
+
+def homepage(request):
+    return render(request, "homepage.html")

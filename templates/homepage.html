@@ -6,22 +6,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hotel ibrahim</title>
+    <title>Welcome#</title>
     <!-- Main StyleSheet -->
     <link rel="stylesheet" href="{% static 'Booking/css/roomspage.css' %}">
 </head>
-<div id="leftside">
-    <h1><a href="/accounts/logout/">logout</a></h1>
-</div>
-<div id="rightside">
-    <h1><a href="/books">Bookings</a></h1>
-</div>
 
 <body>
-    <!-- Brand -->
-    <h1 id="brand">Hotel ibrahim Ci</h1>
+    <div id="brand">
+        <h1>Welcome to Hotel ibrahim</h1>
+        <nav>
+            <ul><a href="/accounts/signup/">register</a></ul>
+            <ul><a href="/accounts/login/">login</a></ul>
+        </nav>
+    </div>  
+    <!-- <h1 id="brand">Hotel ibrahim Ci</h1>
 
-    <!-- Main Content -->
+    
     <div class="content">
         {% for room_category, room_url in room_list %}
         <div class="room">
@@ -36,7 +36,7 @@
         {% endfor %}
 
 
-    </div>
+    </div> -->
 </body>
 
 </html>

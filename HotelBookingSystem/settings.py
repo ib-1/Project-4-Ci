@@ -58,6 +58,9 @@ INSTALLED_APPS = [
     'Booking.book_functions'
 ]
 
+LOGIN_REDIRECT_URL = '/rooms'
+LOGOUT_REDIRECT_URL = '/'
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',

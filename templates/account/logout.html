@@ -1,0 +1,37 @@
+<div id="container">
+  {% load i18n %}
+
+
+
+  {% block content %}
+  <h1>{% trans "Sign Out" %}</h1>
+
+  <p>{% trans 'Are you sure you want to sign out?' %}</p>
+  <a href="/rooms">Home</a>
+  <p></p>
+
+  <form method="post" action="{% url 'account_logout' %}">
+    {% csrf_token %}
+    {% if redirect_field_value %}
+    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
+    {% endif %}
+    <button type="submit">{% trans 'Sign Out' %}</button>
+  </form>
+</div>
+
+{% endblock %}
+<style>
+  body{
+    background-color: #444;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+  }
+  #container{
+    border: white 2px solid;
+  }
+
+  a, a:visited, a:hover, a:active {
+  color: inherit;
+}
+</style>
