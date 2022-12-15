@@ -1,6 +1,6 @@
 from django.shortcuts import render, HttpResponse
-from django.views.generic import ListView, FormView, View
-from django.urls import reverse
+from django.views.generic import ListView, FormView, View, DeleteView
+from django.urls import reverse, reverse_lazy
 from .models import room, book
 from .forms import availibleFrom
 from Booking.book_functions.availibility import check_availibility
@@ -105,3 +105,6 @@ class bookingView(FormView):
         else:
             return HttpResponse('this is booked already!, Please book into another time slot.')
 
+class CancelBookingView(DeleteView):
+    model = book
+    success_url = reverse_lazy('Booking:books')

@@ -4,13 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book a room here!</title>
+    <title>Room List</title>
 </head>
 <body>
-    <form action="" method="POST">
-        {{form.as_p}}
-        {% csrf_token %}
-        <button type="submit">Book Room!</button>
-    </form>
+    {% for books in book_list %}
+    <h2>{{books}}</h2>
+    {% endfor %}
 </body>
 </html>
