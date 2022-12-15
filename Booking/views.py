@@ -12,7 +12,7 @@ def rooms(request):
     room_values = room_categories.values()
     room_list=[]
 
-    for room_type in room_categories:
+    for room_type in room_categories: # loops through the list to create a list of room types to iterate through for the html
         rooms = room_categories.get(room_type)
         room_url = reverse('Booking:roomdetailview', kwargs={'category': room_type})
         room_list.append((rooms, room_url))
@@ -25,6 +25,13 @@ def rooms(request):
 
 class books(ListView):
     model = book
+    def get_queryset(self, *args, **kwargs):
+        if self.request.user.is_staff:
+            booking_list = book.objects.all()
+            return booking_list
+        else:
+            booking_list = book.objects.filter(user=self.request.user)
+            return booking_list
 
 
 class roomdetailview(View):
@@ -36,7 +43,7 @@ class roomdetailview(View):
 
         if len(room_list) > 0:
             rooms = room_list[0]
-            room_category = dict(room.room_type).get(rooms.category, None)
+            room_category = dict(room.room_type).get(rooms.category, None)  #creates a dictonaty of the room catergories/types
             context = {
                 "room_category": room_category,
                 "form": form,
