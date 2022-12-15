@@ -27,12 +27,12 @@ class book(models.Model):
     checking_out = models.DateTimeField()
 
     def __str__(self):
-        return f'{self.user} has booked {self.room} at {self.checking_in} to {self.checking_out}'
+        return f'{self.user} has booked {self.room} at {self.checking_in} to {self.checking_out}' 
 
-    def get_room_category(self):
+    def get_room_category(self): #gets the actual room type from the key to display it on the html
         room_categories = dict(self.room.room_type)
         room_category = room_categories.get(self.room.category)
         return room_category
 
-    def get_cancel_booking_url(self):
+    def get_cancel_booking_url(self): #code helped from stack overflow
         return reverse_lazy("Booking:CancelBookingView", args=[self.pk])

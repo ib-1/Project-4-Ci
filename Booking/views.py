@@ -6,9 +6,9 @@ from .forms import availibleFrom
 from Booking.book_functions.availibility import check_availibility
 # Create your views here.
 
-def rooms(request):
+def rooms(request): #gets all the values of the room and sorts it into a list
     rooms = room.objects.all()[0]
-    room_categories = dict(room.room_type)
+    room_categories = dict(room.room_type) #creates a dictionary
     room_values = room_categories.values()
     room_list=[]
 
