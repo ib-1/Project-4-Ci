@@ -68,6 +68,8 @@ CLOUDINARY = {
     'API_PROXY': 'http://proxy.server:3128'
 }
 
+STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
